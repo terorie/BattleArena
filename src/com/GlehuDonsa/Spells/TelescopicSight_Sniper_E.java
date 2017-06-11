@@ -21,8 +21,10 @@ public class TelescopicSight_Sniper_E implements Spell
 
 	private int manacost;
 	private int level;
-	private int cooldown;				// Frames
+	private int baseCooldown;			// Frames
 	private int current_cd;				// Frames
+
+	private int cooldown;				// Frames
 
 	private boolean isExpired;
 
@@ -36,20 +38,23 @@ public class TelescopicSight_Sniper_E implements Spell
 
 
 		castRange 		= 0;			// 0 = Infinite; In this case the <AttackRange> of the <Champion>
+
 		baseDamage 		= 50;
+		baseCooldown	= 600;			// Frames = 600 / 60 = 10 seconds
+
 		upgradeDamage 	= 100;
 		upgradeCooldown	= 60;			// Frames = 60 / 60 = 1 second
+
 		upgradeMax 		= 5;			// Max Level
 
-		current_dmg		= baseDamage + (level * upgradeDamage);
+		current_dmg		= baseDamage   + (level * upgradeDamage);
+		current_cd		= baseCooldown - (level * upgradeCooldown);
 
 		manacost		= 0;
+
+		// Leave as-is:
 		level			= 0;
-		cooldown 		= 600;			// Frames = 600 / 60 = 10 seconds
-
-		current_cd		= 0;
-
-
+		cooldown		= 0;
 		isExpired 		= false;
 	}
 
@@ -58,14 +63,14 @@ public class TelescopicSight_Sniper_E implements Spell
 		if(current_cd == 0)
 		{
 			target.damage(current_dmg);
-			current_cd = cooldown;
+			cooldown = current_cd;
 		}
 	}
 	public void cooldown()
 	{
-		if(current_cd > 0)
+		if(cooldown > 0)
 		{
-			current_cd--;
+			cooldown--;
 		}
 
 	}

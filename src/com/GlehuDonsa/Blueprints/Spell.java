@@ -12,11 +12,16 @@ public interface Spell
 	int castRange		= 0;
 	int baseDamage 		= 0;
 	int upgradeDamage 	= 0;
+	int upgradeCooldown	= 0;
 	int upgradeMax 		= 0;	// Max Level
+
+	int currentDmg		= 0;
 
 	int manacost		= 0;
 	int level			= 0;
-	int cooldown		= 0;	// Frames
+	int baseCooldown	= 0;	// Frames
+
+	int currentCd		= 0;
 
 	boolean isExpired	= false;
 
