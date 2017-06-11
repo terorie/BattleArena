@@ -36,8 +36,6 @@ public abstract class Champ
 		{
 			this.attackrange = 100;
 		}
-
-		System.out.println("Champion " + getName() + " created as #" + getId()+1 + " in team " + getTeam() + ".");
 	}
 
 	public String getName()
@@ -67,6 +65,12 @@ public abstract class Champ
 	public boolean isAlive()
 	{
 		return isAlive;
+	}
+
+	public void getInfo()
+	{
+		System.out.println("Champion " + getName() + " created as #" + getId()+1 + " in team " + getTeam() + ".\nSpells:\n");
+		for(Spell spell : spells) System.out.println(spell.getInfo());
 	}
 
 	public void addSpell(Spell spell)

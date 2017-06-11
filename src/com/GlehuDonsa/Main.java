@@ -1,6 +1,8 @@
 package com.GlehuDonsa;
 
 import com.GlehuDonsa.Blueprints.Champ;
+import com.GlehuDonsa.Champions.Sniper;
+import com.GlehuDonsa.Spells.TelescopicSight_Sniper_E;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,12 @@ public class Main
 
 	public void init()
 	{
+		Sniper sniper = new Sniper("Sniper", 0, "Blue");
+		TelescopicSight_Sniper_E sniper_e = new TelescopicSight_Sniper_E();
+		sniper.addSpell(sniper_e);
+		teamBlue.add(sniper);
+
+		sniper.getInfo();
 	}
 
 	public void run()

@@ -31,8 +31,6 @@ public class Sniper extends Champ
 
 		this.hp   = 500;
 		this.attackrange = 500;
-
-		System.out.println("Champion " + getName() + " created as #" + getId()+1 + " in team " + getTeam() + ".");
 	}
 
 	public String getName()
@@ -62,6 +60,12 @@ public class Sniper extends Champ
 	public boolean isAlive()
 	{
 		return isAlive;
+	}
+
+	public void getInfo()
+	{
+		System.out.println("Champion " + getName() + " created as #" + getId()+1 + " in team " + getTeam() + ".\nSpells:\n");
+		for(Spell spell : spells) System.out.println(spell.getInfo());
 	}
 
 	public void addSpell(Spell spell)
