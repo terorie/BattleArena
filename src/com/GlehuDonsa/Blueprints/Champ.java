@@ -7,9 +7,13 @@ public abstract class Champ
 	private String name, team;
 	private int id, hp, attackrange;
 
-	private boolean invulnerable = false;
-	private boolean silenced 	 = false;
-	private boolean isAlive		 = true;
+	private boolean invulnerable 	= false;
+	private boolean canBeHitSpell	= true;
+	private boolean canBeHitAttack	= true;
+
+	private boolean silenced 	 	= false;
+
+	private boolean isAlive		 	= true;
 
 	private ArrayList<Spell> spells  = new ArrayList<>();
 	private ArrayList<Buff>  buffs   = new ArrayList<>();
@@ -58,6 +62,9 @@ public abstract class Champ
 	{
 		return invulnerable;
 	}
+	public boolean canBeHitSpell() { return canBeHitSpell; }
+	public boolean canBeHitAttack() { return canBeHitAttack; }
+
 	public boolean isSilenced()
 	{
 		return silenced;

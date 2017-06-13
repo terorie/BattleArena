@@ -12,7 +12,11 @@ public class Sniper extends Champ
 	private int id, hp, attackrange;
 
 	private boolean invulnerable = false;
+	private boolean canBeHitSpell	= true;
+	private boolean canBeHitAttack	= true;
+
 	private boolean silenced 	 = false;
+
 	private boolean isAlive		 = true;
 
 	private ArrayList<Spell> spells  = new ArrayList<>();
@@ -53,6 +57,9 @@ public class Sniper extends Champ
 	{
 		return invulnerable;
 	}
+	public boolean canBeHitSpell() { return canBeHitSpell; }
+	public boolean canBeHitAttack() { return canBeHitAttack; }
+
 	public boolean isSilenced()
 	{
 		return silenced;

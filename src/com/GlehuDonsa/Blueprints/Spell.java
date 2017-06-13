@@ -13,7 +13,7 @@ public interface Spell
 	int baseDamage 		= 0;
 	int upgradeDamage 	= 0;
 	int upgradeCooldown	= 0;
-	int upgradeMax 		= 0;	// Max Level
+	int upgradeMax 		= 0;	// Max level
 
 	int currentDmg		= 0;
 
@@ -25,8 +25,11 @@ public interface Spell
 
 	boolean isExpired	= false;
 
+	boolean canHitTarget(Champ target);
 	void onHit(Champ target);
+
 	void cooldown();
+
 	void upgrade();
 
 	String getInfo();

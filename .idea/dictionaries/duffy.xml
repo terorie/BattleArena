@@ -4,8 +4,10 @@
       <w>cooldown</w>
       <w>debuff</w>
       <w>debuffs</w>
+      <w>dota</w>
       <w>elementalist</w>
       <w>onhit</w>
+      <w>subitems</w>
     </words>
   </dictionary>
 </component>

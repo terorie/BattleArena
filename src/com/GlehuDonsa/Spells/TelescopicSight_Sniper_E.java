@@ -58,9 +58,14 @@ public class TelescopicSight_Sniper_E implements Spell
 		isExpired 		= false;
 	}
 
+	public boolean canHitTarget(Champ target)
+	{
+		return target.canBeHitSpell();
+	}
+
 	public void onHit(Champ target)
 	{
-		if(current_cd == 0)
+		if(current_cd == 0 && canHitTarget(target))
 		{
 			target.damage(current_dmg);
 			cooldown = current_cd;
@@ -85,17 +90,15 @@ public class TelescopicSight_Sniper_E implements Spell
 
 	public String getInfo()
 	{
-		String info =
-						"--------------------------------------------------------------------------\n" +
-						""                  + SPELL_NAME +
-						"\nCast type:\t\t"  + CAST_TYPE +
-						"\nCast target:\t"  + CAST_TARGET +
-						"\nSpell type:\t\t" + SPELL_TYPE +
-						"\nSpell target:\t" + SPELL_TARGET +
-						"\nDescription:"    +
-						"\nEvery <" + cooldown/60 + "> seconds, the next basic attack deals <" + current_dmg + "> additional damage." +
-						"\n--------------------------------------------------------------------------\n";
-		return info;
+		return "--------------------------------------------------------------------------\n" +
+		""                  + SPELL_NAME +
+		"\nCast type:\t\t"  + CAST_TYPE +
+		"\nCast target:\t"  + CAST_TARGET +
+		"\nSpell type:\t\t" + SPELL_TYPE +
+		"\nSpell target:\t" + SPELL_TARGET +
+		"\nDescription:"    +
+		"\nEvery <" + cooldown/60 + "> seconds, the next basic attack deals <" + current_dmg + "> additional damage." +
+		"\n--------------------------------------------------------------------------\n";
 	}
 
 	public boolean isExpired()
