@@ -70,6 +70,7 @@ Contains items based off the _Items Blueprint_
 ---
 __Summary:__
 Last edited: 13.06.2017 by Glehu
+
 Changes:
 * Added Items
 * Added Summary (this :D)
