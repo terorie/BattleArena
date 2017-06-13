@@ -1,7 +1,6 @@
 # BattleArena
 A Java BattleArena Project.
 
-
 # Contents
 
 ---
@@ -11,6 +10,7 @@ Contains the basic structure of:
 * Champions
 * Spells
 * (De-)Buffs
+* (Items)
 
 ---
 
@@ -50,3 +50,27 @@ Contains both the _Buffs_ and _Debuffs_ based off the _Buffs Blueprint_.
 
 #### Control:
 * No control.
+
+---
+
+## Items
+Contains items based off the _Items Blueprint_
+
+### _Current State:_
+#### Items:
+#### Active:
+* None.
+
+#### Passive:
+* None.
+
+#### Control:
+* No control.
+
+---
+__Summary:__
+Last edited: 13.06.2017 by Glehu
+
+Changes:
+* Added Items
+* Added Summary (this :D)
