@@ -1,6 +1,12 @@
 # BattleArena
 A Java BattleArena Project.
 
+How to use:
+
+| Windows      | Linux/Mac |
+| ------------ | --------- |
+| CMD> run.bat | ./run.sh  |
+
 # Contents
 
 ---
