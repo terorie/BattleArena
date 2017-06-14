@@ -1,6 +1,6 @@
 package com.glehudonsa.battlearena.blueprints;
 
-import java.util.ArrayList;
+import com.badlogic.gdx.utils.Array;
 
 public abstract class Champ
 {
@@ -15,13 +15,13 @@ public abstract class Champ
 
 	private boolean isAlive		 	= true;
 
-	private ArrayList<Spell> spells  = new ArrayList<>();
-	private ArrayList<Buff>  buffs   = new ArrayList<>();
-	private ArrayList<Buff>  debuffs = new ArrayList<>();
+	private Array<Spell> spells  = new Array<>();
+	private Array<Buff>  buffs   = new Array<>();
+	private Array<Buff>  debuffs = new Array<>();
 
-	private ArrayList<Spell> toRemove_Spell   = new ArrayList<>();
-	private ArrayList<Buff>  toRemove_Buff    = new ArrayList<>();
-	private ArrayList<Buff>  toRemove_Debuff  = new ArrayList<>();
+	private Array<Spell> toRemove_Spell   = new Array<>();
+	private Array<Buff>  toRemove_Buff    = new Array<>();
+	private Array<Buff>  toRemove_Debuff  = new Array<>();
 
 	public Champ(){}
 
@@ -76,7 +76,14 @@ public abstract class Champ
 
 	public void getInfo()
 	{
-		System.out.println("Champion " + getName() + " created as #" + getId()+1 + " in team " + getTeam() + ".\nSpells:\n");
+		System.out.printf(
+			"Champion %s crated as #%d in team %s.\n" +
+			"Spells:\n",
+				getName(),
+				getId()+1,
+				getTeam()
+		);
+
 		for(Spell spell : spells) System.out.println(spell.getInfo());
 	}
 
@@ -123,7 +130,7 @@ public abstract class Champ
 			}
 		}
 
-		if(buffs.size() > 0)
+		if(buffs.size > 0)
 		{
 			for (Buff buff : buffs)
 			{
@@ -138,7 +145,7 @@ public abstract class Champ
 			}
 		}
 
-		if(debuffs.size() > 0)
+		if(debuffs.size > 0)
 		{
 			for (Buff debuff : debuffs)
 			{
@@ -153,9 +160,12 @@ public abstract class Champ
 			}
 		}
 
-		if(toRemove_Spell.size() > 0)  spells.removeAll(toRemove_Spell);
-		if(toRemove_Buff.size() > 0)   buffs.removeAll(toRemove_Buff);
-		if(toRemove_Debuff.size() > 0) debuffs.removeAll(toRemove_Debuff);
+		/* identity:
+		 * - false uses A.equals(B) to compare
+		 * - true  uses A == B      to compare */
+		if(toRemove_Spell. size > 0)  spells.removeAll(toRemove_Spell,  true);
+		if(toRemove_Buff.  size > 0)   buffs.removeAll(toRemove_Buff,   true);
+		if(toRemove_Debuff.size > 0) debuffs.removeAll(toRemove_Debuff, true);
 
 		toRemove_Spell.clear();
 		toRemove_Buff.clear();
