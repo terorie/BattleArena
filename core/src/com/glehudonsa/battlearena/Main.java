@@ -5,20 +5,16 @@ import com.glehudonsa.battlearena.champions.Sniper;
 import com.glehudonsa.battlearena.spells.TelescopicSight_Sniper_E;
 
 import java.util.ArrayList;
+import com.badlogic.gdx.ApplicationAdapter;
 
-public class Main
+public class Main extends ApplicationAdapter
 {
 
 	private ArrayList<Champ> teamBlue = new ArrayList<>();
 	private ArrayList<Champ> teamRed = new ArrayList<>();
 
-	public static void main(String[] args)
-	{
-		new Main().init();
-		new Main().run();
-	}
-
-	public void init()
+	@Override
+	public void create()
 	{
 		Sniper sniper = new Sniper("Sniper", 0, "Blue");
 		TelescopicSight_Sniper_E sniper_e = new TelescopicSight_Sniper_E();
@@ -28,20 +24,18 @@ public class Main
 		sniper.getInfo();
 	}
 
-	public void run()
+	@Override
+	public void render()
 	{
-		boolean running = true;
-		while(running)
+		for(Champ champ : teamBlue)
 		{
-			for(Champ champ : teamBlue)
-			{
-				champ.update();
-			}
+			champ.update();
+		}
 
-			for(Champ champ : teamRed)
-			{
-				champ.update();
-			}
+		for(Champ champ : teamRed)
+		{
+			champ.update();
 		}
 	}
+
 }
