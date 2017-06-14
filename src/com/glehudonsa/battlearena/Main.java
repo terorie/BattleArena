@@ -1,8 +1,8 @@
-package com.GlehuDonsa;
+package com.glehudonsa.battlearena;
 
-import com.GlehuDonsa.Blueprints.Champ;
-import com.GlehuDonsa.Champions.Sniper;
-import com.GlehuDonsa.Spells.TelescopicSight_Sniper_E;
+import com.glehudonsa.battlearena.blueprints.Champ;
+import com.glehudonsa.battlearena.champions.Sniper;
+import com.glehudonsa.battlearena.spells.TelescopicSight_Sniper_E;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.GlehuDonsa.Blueprints;
+package com.glehudonsa.battlearena.blueprints;
 
 public interface Spell
 {

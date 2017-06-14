@@ -1,23 +1,19 @@
-package com.GlehuDonsa.Champions;
-
-import com.GlehuDonsa.Blueprints.Buff;
-import com.GlehuDonsa.Blueprints.Champ;
-import com.GlehuDonsa.Blueprints.Spell;
+package com.glehudonsa.battlearena.blueprints;
 
 import java.util.ArrayList;
 
-public class Sniper extends Champ
+public abstract class Champ
 {
 	private String name, team;
 	private int id, hp, attackrange;
 
-	private boolean invulnerable = false;
+	private boolean invulnerable 	= false;
 	private boolean canBeHitSpell	= true;
 	private boolean canBeHitAttack	= true;
 
-	private boolean silenced 	 = false;
+	private boolean silenced 	 	= false;
 
-	private boolean isAlive		 = true;
+	private boolean isAlive		 	= true;
 
 	private ArrayList<Spell> spells  = new ArrayList<>();
 	private ArrayList<Buff>  buffs   = new ArrayList<>();
@@ -27,14 +23,23 @@ public class Sniper extends Champ
 	private ArrayList<Buff>  toRemove_Buff    = new ArrayList<>();
 	private ArrayList<Buff>  toRemove_Debuff  = new ArrayList<>();
 
-	public Sniper(String name, int id, String team)
+	public Champ(){}
+
+	public Champ(String name, int id, String team, boolean ranged)
 	{
 		this.name = name;
 		this.id   = id;
 		this.team = team;
 
 		this.hp   = 500;
-		this.attackrange = 500;
+
+		if(ranged)
+		{
+			this.attackrange = 500;
+		} else
+		{
+			this.attackrange = 100;
+		}
 	}
 
 	public String getName()

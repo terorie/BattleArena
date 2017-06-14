@@ -1,7 +1,7 @@
-package com.GlehuDonsa.Spells;
+package com.glehudonsa.battlearena.spells;
 
-import com.GlehuDonsa.Blueprints.Champ;
-import com.GlehuDonsa.Blueprints.Spell;
+import com.glehudonsa.battlearena.blueprints.Champ;
+import com.glehudonsa.battlearena.blueprints.Spell;
 
 public class TelescopicSight_Sniper_E implements Spell
 {
